@@ -7,10 +7,10 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import mqtt from 'mqtt';
 
 // === KONFIGURASI KONEKSI ===
-const token = 'SwuZ8PHr5xU6vrLf0eOkSZzmKSZoUfF-I7KHmpfWD_DJTc5Zybm-uwnwHGcTYblJ0OLiWhz14_4E3LivL7NwYQ==';
-const org = 'going.merry1331@gmail.com';
-const bucket = 'sensor_bucket';
-const url = 'https://eu-central-1-1.aws.cloud2.influxdata.com';
+const token = process.env.REACT_APP_INFLUX_TOKEN;
+const org = process.env.REACT_APP_INFLUX_ORG;
+const bucket = process.env.REACT_APP_INFLUX_BUCKET;
+const url = process.env.REACT_APP_INFLUX_URL;
 
 const blinkerCSS = `
 
