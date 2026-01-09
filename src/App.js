@@ -679,7 +679,7 @@ const blinkerCSS = `
   input[type=range] { -webkit-appearance: none; background: transparent; }
   input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; background: #333; }
   input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #00d4ff; margin-top: -6px; }
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
     .responsive-main { flex-direction: column !important; align-items: center !important; }
     .responsive-window { width: 92vw !important; position: static !important; transform: none !important; margin-bottom: 20px; }
     .responsive-stack { width: 100% !important; align-items: center !important; }
