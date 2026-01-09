@@ -1,10 +1,10 @@
 {
   "name": "my-dashboard-ui",
-  "homepage": "https://abram-kaleb.github.io/DT-Ackerman",
+  "homepage": "https://abram-kaleb.github.io/Ackerman",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@influxdata/influxdb-client": "^1.35.0",
+    "@influxdata/DT-influxdb-client": "^1.35.0",
     "@influxdata/influxdb-client-browser": "^1.35.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
