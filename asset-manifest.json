@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DT-Ackerman/static/css/main.e6c13ad2.css",
+    "main.js": "/DT-Ackerman/static/js/main.c6e3b185.js",
+    "static/js/453.4bf0c225.chunk.js": "/DT-Ackerman/static/js/453.4bf0c225.chunk.js",
+    "index.html": "/DT-Ackerman/index.html",
+    "main.e6c13ad2.css.map": "/DT-Ackerman/static/css/main.e6c13ad2.css.map",
+    "main.c6e3b185.js.map": "/DT-Ackerman/static/js/main.c6e3b185.js.map",
+    "453.4bf0c225.chunk.js.map": "/DT-Ackerman/static/js/453.4bf0c225.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.c6e3b185.js"
+  ]
+}
