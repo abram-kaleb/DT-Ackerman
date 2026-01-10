@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/DT-Ackerman/static/css/main.ec97f1c8.css",
-    "main.js": "/DT-Ackerman/static/js/main.aa985c08.js",
+    "main.css": "/DT-Ackerman/static/css/main.67f4336a.css",
+    "main.js": "/DT-Ackerman/static/js/main.2ab568fe.js",
     "static/js/453.4bf0c225.chunk.js": "/DT-Ackerman/static/js/453.4bf0c225.chunk.js",
     "index.html": "/DT-Ackerman/index.html",
-    "main.ec97f1c8.css.map": "/DT-Ackerman/static/css/main.ec97f1c8.css.map",
-    "main.aa985c08.js.map": "/DT-Ackerman/static/js/main.aa985c08.js.map",
+    "main.67f4336a.css.map": "/DT-Ackerman/static/css/main.67f4336a.css.map",
+    "main.2ab568fe.js.map": "/DT-Ackerman/static/js/main.2ab568fe.js.map",
     "453.4bf0c225.chunk.js.map": "/DT-Ackerman/static/js/453.4bf0c225.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec97f1c8.css",
-    "static/js/main.aa985c08.js"
+    "static/css/main.67f4336a.css",
+    "static/js/main.2ab568fe.js"
   ]
 }
