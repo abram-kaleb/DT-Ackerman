@@ -161,13 +161,13 @@ const App = () => {
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '1.1vw', fontWeight: '900', color: '#fff', letterSpacing: '1px' }}>MAN 5LYY/30H</span>
-            <span style={{ fontSize: '0.55vw', color: '#00d4ff', fontWeight: 'bold' }}>Digital Twin Prototype</span>
+            <span style={{ fontSize: '0.55vw', color: '#00d4ff', fontWeight: 'bold' }}>DIGITAL TWIN PROTOTYPE</span>
           </div>
         </div>
 
 
         <div style={{ textAlign: 'right', color: '#fff' }}>
-          <div style={{ fontSize: '1.1vw', fontWeight: '900', color: '#ffffff' }}>v2.3.2_ackerman</div>
+          <div style={{ fontSize: '1.1vw', fontWeight: '900', color: '#ffffff' }}>v2.3.3_ackerman</div>
           <div style={{ fontSize: '0.8vw', color: connStatus === 'online' ? '#00ff40' : '#ff4444', fontWeight: 'bold' }}>{connStatus}</div>
         </div>
       </header>
@@ -177,7 +177,7 @@ const App = () => {
 
         <Draggable nodeRef={controlRef} handle=".drag-bar" onStart={() => bringToFront('control')}>
           <div ref={controlRef} className="" style={{ ...windowStyle, minheight: '22vw', width: '8.5vw', zIndex: zIndex.control }}>
-            <div className="drag-bar" style={{ ...dragBarStyle, buttomlineborder: '1px solid rgba(255, 255, 255, 1)', backgroundColor: '#000000' }}>
+            <div className="drag-bar" style={{ ...dragBarStyle, buttomlineborder: '1px solid rgba(255, 255, 255, 1)', backgroundColor: '#00c431' }}>
               <span style={titleStyle}>Remote Control</span>
             </div>
 
@@ -539,27 +539,14 @@ const App = () => {
           </Draggable>
 
           <Draggable nodeRef={histRef} handle=".drag-bar" onStart={() => bringToFront('hist')}>
-            <div ref={histRef} style={{ ...windowStyle, width: '24vw', zIndex: zIndex.hist }}>
+            <div ref={histRef}
+              onClick={() => !isTrendMaximized && setIsTrendMaximized(true)}
+
+              style={{ ...windowStyle, width: '24vw', zIndex: zIndex.hist }}>
+
               <div className="drag-bar" style={dragBarStyle}>
                 <span style={titleStyle}>Trend: {selectedField.toUpperCase()}</span>
 
-                <button
-                  onMouseEnter={() => setHoverExpand(true)}
-                  onMouseLeave={() => setHoverExpand(false)}
-                  onClick={() => setIsTrendMaximized(true)}
-                  style={{
-                    ...loadBtn,
-                    backgroundColor: hoverExpand ? '#00d4ff' : '#1a4a4a',
-                    color: hoverExpand ? '#000' : '#fff',
-                    boxShadow: hoverExpand ? '0 0 15px #00d4ffaa' : 'none',
-                    border: hoverExpand ? '0px solid #fff' : '1px solid transparent',
-                    transition: 'all 0.2s ease',
-                    padding: '0.04vw 0.7vw',
-                    cursor: 'pointer'
-                  }}
-                >
-                  EXPAND
-                </button>
 
               </div>
               <div style={{ height: '14vh', padding: '0.5vw' }}>
@@ -682,39 +669,15 @@ const blinkerCSS = `
   
   input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; background: #333; }
   input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #00c431; margin-top: -6px; }
-  
-  @media (max-width: 800px) {
-    .responsive-main { 
-      flex-direction: row !important; 
-      flex-wrap: wrap !important; 
-      justify-content: center !important; 
-      gap: 10px !important; /* Jarak antar kotak */
-      padding: 10px !important;
-    }
-    .responsive-stack { 
-      width: 100% !important; 
-      flex-direction: row !important; 
-      flex-wrap: wrap !important; 
-      justify-content: center !important;
-      gap: 10px !important;
-    }
-    div[class*="react-draggable"] {
-      position: relative !important;
-      left: 0 !important;
-      top: 0 !important;
-      transform: none !important;
-      width: 45vw !important; /* Membuat 2 kolom (setengah layar) */
-      min-width: 160px !important; /* Mencegah terlalu kecil di HP ramping */
-      margin: 0 !important;
-    }
-    /* Kecilkan font agar muat di 2 kolom */
-    .big-value { font-size: 12px !important; }
-    span, div, button { font-size: 9px !important; }
+  @media (max-width: 100px) {
+    .responsive-main { flex-direction: column !important; align-items: center !important; }
+    .responsive-window { width: 92vw !important; position: static !important; transform: none !important; margin-bottom: 20px; }
+    .responsive-stack { width: 100% !important; align-items: center !important; gap:20px !important;}
+    header, footer { padding: 15px !important; }
+    .footer-content-mobile { flex-direction: column !important; gap: 10px; text-align: center; }
+    span, div, button { font-size: 10px !important; }
+    .big-value { font-size: 22px !important; }
   }
-
-
-
-  
 `;
 
 
