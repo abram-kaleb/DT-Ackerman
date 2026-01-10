@@ -161,14 +161,14 @@ const App = () => {
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontSize: '1.1vw', fontWeight: '900', color: '#fff', letterSpacing: '1px' }}>MAN 5LYY/30H</span>
-            <span style={{ fontSize: '0.55vw', color: '#00d4ff', fontWeight: 'bold' }}>PROPULSION MONITORING UNIT</span>
+            <span style={{ fontSize: '0.55vw', color: '#00d4ff', fontWeight: 'bold' }}>Digital Twin Prototype</span>
           </div>
         </div>
 
 
         <div style={{ textAlign: 'right', color: '#fff' }}>
-          <div style={{ fontSize: '1.1vw', fontWeight: '900', color: '#ffffff' }}>v2.3_ackerman</div>
-          <div style={{ fontSize: '0.8vw', color: connStatus === 'online' ? '#00ff41' : '#ff4444', fontWeight: 'bold' }}>{connStatus}</div>
+          <div style={{ fontSize: '1.1vw', fontWeight: '900', color: '#ffffff' }}>v2.3.2_ackerman</div>
+          <div style={{ fontSize: '0.8vw', color: connStatus === 'online' ? '#00ff40' : '#ff4444', fontWeight: 'bold' }}>{connStatus}</div>
         </div>
       </header>
 
@@ -176,9 +176,9 @@ const App = () => {
       <main className="responsive-main" style={mainAreaStyle}>
 
         <Draggable nodeRef={controlRef} handle=".drag-bar" onStart={() => bringToFront('control')}>
-          <div ref={controlRef} className="" style={{ ...windowStyle, minheight: '22vw', width: '10vw', zIndex: zIndex.control }}>
-            <div className="drag-bar" style={{ ...dragBarStyle, buttomlineborder: '1px solid rgba(255, 255, 255, 1)', backgroundColor: '#00000011' }}>
-              <span style={titleStyle}>Remote_Control</span>
+          <div ref={controlRef} className="" style={{ ...windowStyle, minheight: '22vw', width: '8.5vw', zIndex: zIndex.control }}>
+            <div className="drag-bar" style={{ ...dragBarStyle, buttomlineborder: '1px solid rgba(255, 255, 255, 1)', backgroundColor: '#000000' }}>
+              <span style={titleStyle}>Remote Control</span>
             </div>
 
 
@@ -187,7 +187,7 @@ const App = () => {
 
               <div style={{ borderBottom: '1px solid #333', pb: '1vw' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', mb: '5px' }}>
-                  <span style={{ color: '#00d4ff', fontSize: '0.7vw' }}>RPM</span>
+                  <span style={{ color: '#ffffff', fontSize: '0.7vw' }}>RPM</span>
                   <span style={{ color: '#fff', fontWeight: 'bold' }}>{localRPM}</span>
                 </div>
 
@@ -210,9 +210,9 @@ const App = () => {
                       cursor: 'pointer',
                       transition: 'all 0.2s ease',
 
-                      backgroundColor: hoverBtn === 'rpm' ? '#00d4ff' : '#1a4a4a',
+                      backgroundColor: hoverBtn === 'rpm' ? '#00c431' : '#333',
                       color: hoverBtn === 'rpm' ? '#000' : '#fff',
-                      boxShadow: hoverBtn === 'rpm' ? '0 0 15px #00d4ffaa' : 'none',
+                      boxShadow: hoverBtn === 'rpm' ? '0 0 15px #00c431' : 'none',
 
                     }}
                   >
@@ -233,7 +233,7 @@ const App = () => {
               </div>
               <div style={{ borderBottom: '1px solid #333', pb: '1vw' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', mb: '5px' }}>
-                  <span style={{ color: '#00d4ff', fontSize: '0.7vw' }}>Load</span>
+                  <span style={{ color: '#ffffff', fontSize: '0.7vw' }}>Load</span>
                   <span style={{ color: '#fff', fontWeight: 'bold' }}>{localLoad}</span>
                 </div>
 
@@ -256,9 +256,9 @@ const App = () => {
                       fontSize: '0.7vw',
                       cursor: 'pointer',
                       transition: 'all 0.2s ease',
-                      backgroundColor: hoverBtn === 'load' ? '#00d4ff' : '#1a4a4a',
+                      backgroundColor: hoverBtn === 'load' ? '#00c431' : '#333',
                       color: hoverBtn === 'load' ? '#000' : '#fff',
-                      boxShadow: hoverBtn === 'load' ? '0 0 15px #00d4ffaa' : 'none',
+                      boxShadow: hoverBtn === 'load' ? '0 0 15px #00c431' : 'none',
                     }}>Set
                   </button>
 
@@ -293,7 +293,7 @@ const App = () => {
                 }}
                 style={{
                   ...loadBtn,
-                  backgroundColor: hoverBtn === 'emergency' ? '#ff0000' : '#1a4a4a',
+                  backgroundColor: hoverBtn === 'emergency' ? '#ff0000' : '#333',
                   color: '#ffffff',
                   marginTop: '0.5vw',
                   fontSize: '15px',
@@ -322,7 +322,7 @@ const App = () => {
               </div>
               <div style={{ width: '100%' }}>
                 <GaugeComponent
-                  style={{ width: '100%' }}
+                  style={{ width: '90%', margin: '0 auto' }}
                   value={data?.rpm || 0}
                   maxValue={1000}
                   type="radial"
@@ -359,7 +359,7 @@ const App = () => {
 
         <div className="responsive-stack" style={rightStackStyle}>
           <Draggable nodeRef={exhRef} handle=".drag-bar" onStart={() => bringToFront('exh')}>
-            <div ref={exhRef} style={{ ...windowStyle, width: '18vw', zIndex: zIndex.exh, animation: (data?.exh_t_avg > 450) ? 'blinker 1s linear infinite' : 'none' }}>
+            <div ref={exhRef} style={{ ...windowStyle, width: '14vw', zIndex: zIndex.exh, animation: (data?.exh_t_avg > 450) ? 'blinker 1s linear infinite' : 'none' }}>
               <div className="drag-bar" style={dragBarStyle}><span style={titleStyle}>Exhaust Temp</span></div>
 
               {/* Klik pada area contentStyle ini akan toggle detail C1-C6 */}
@@ -379,7 +379,7 @@ const App = () => {
 
                 <div style={{ width: '100%' }}>
                   <GaugeComponent
-                    style={{ width: '100%' }}
+                    style={{ width: '80%', margin: '0 auto' }}
                     value={data?.exh_t_avg || 0}
                     maxValue={600}
                     type="semicircle"
@@ -429,9 +429,9 @@ const App = () => {
           </Draggable>
 
           <Draggable nodeRef={loadRef} handle=".drag-bar" onStart={() => bringToFront('load')}>
-            <div ref={loadRef} style={{ ...windowStyle, width: '18vw', zIndex: zIndex.load, animation: (data?.load > 90) ? 'blinker 1s linear infinite' : 'none' }}>
+            <div ref={loadRef} style={{ ...windowStyle, width: '14vw', zIndex: zIndex.load, animation: (data?.load > 90) ? 'blinker 1s linear infinite' : 'none' }}>
               <div className="drag-bar" style={dragBarStyle}><span style={titleStyle}>Engine Load</span></div>
-              <div style={{ ...contentStyle, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ ...contentStyle, padding: '0px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
 
                 <div style={{ marginBottom: '-1vw', textAlign: 'center', zIndex: 2 }}>
@@ -443,7 +443,7 @@ const App = () => {
 
                 <div style={{ width: '100%' }}>
                   <GaugeComponent
-                    style={{ width: '100%' }}
+                    style={{ width: '80%', margin: '0 auto' }}
                     value={data?.load || 0}
                     type="semicircle"
                     arc={{
@@ -477,12 +477,12 @@ const App = () => {
         <div style={rightStackStyle}>
 
           <Draggable nodeRef={alarmRef} handle=".drag-bar" onStart={() => bringToFront('alarm')}>
-            <div ref={alarmRef} style={{ ...windowStyle, height: 'auto', width: '14vw', zIndex: zIndex.alarm }}>
-              <div className="drag-bar" style={{ ...dragBarStyle, backgroundColor: alarms.length > 0 ? 'rgba(255, 0, 0, 0)' : '#1a1a1a' }}>
+            <div ref={alarmRef} style={{ ...windowStyle, height: 'auto', width: '12vw', zIndex: zIndex.alarm }}>
+              <div className="drag-bar" style={{ ...dragBarStyle, backgroundColor: alarms.length > 0 ? 'rgb(255, 0, 0)' : '#EA4228' }}>
                 <span style={titleStyle}>Alarm ({alarms.length})</span>
               </div>
               <div style={{ padding: '0.6vw', overflowY: 'auto' }}>
-                {alarms.length === 0 ? <div style={{ fontSize: '0.8vw', textAlign: 'center', color: '#ffffffff', padding: '0.5vw' }}>System Normal</div> :
+                {alarms.length === 0 ? <div style={{ fontSize: '0.8vw', textAlign: 'center', color: 'rgba(255, 255, 255, 0.36)', padding: '0.5vw' }}>System Normal</div> :
                   alarms.map(a => <div key={a.id} style={alarmBoxSlim}><span>[ {a.sev} ] {a.msg}</span><button onClick={() => clearAlarm(a.id)} style={clearBtn}>ACK</button></div>)
                 }
               </div>
@@ -490,7 +490,7 @@ const App = () => {
           </Draggable>
 
           <Draggable nodeRef={paramRef} handle=".drag-bar" onStart={() => bringToFront('params')}>
-            <div ref={paramRef} style={{ ...windowStyle, width: '14vw', zIndex: zIndex.params }}>
+            <div ref={paramRef} style={{ ...windowStyle, width: '11vw', zIndex: zIndex.params }}>
               <div className="drag-bar" style={dragBarStyle}><span style={titleStyle}>Parameters</span></div>
               <div style={{ padding: '0.8vw' }}>
 
@@ -539,7 +539,7 @@ const App = () => {
           </Draggable>
 
           <Draggable nodeRef={histRef} handle=".drag-bar" onStart={() => bringToFront('hist')}>
-            <div ref={histRef} style={{ ...windowStyle, width: '14vw', zIndex: zIndex.hist }}>
+            <div ref={histRef} style={{ ...windowStyle, width: '24vw', zIndex: zIndex.hist }}>
               <div className="drag-bar" style={dragBarStyle}>
                 <span style={titleStyle}>Trend: {selectedField.toUpperCase()}</span>
 
@@ -552,8 +552,9 @@ const App = () => {
                     backgroundColor: hoverExpand ? '#00d4ff' : '#1a4a4a',
                     color: hoverExpand ? '#000' : '#fff',
                     boxShadow: hoverExpand ? '0 0 15px #00d4ffaa' : 'none',
-                    border: hoverExpand ? '1px solid #fff' : '1px solid transparent',
+                    border: hoverExpand ? '0px solid #fff' : '1px solid transparent',
                     transition: 'all 0.2s ease',
+                    padding: '0.04vw 0.7vw',
                     cursor: 'pointer'
                   }}
                 >
@@ -635,26 +636,26 @@ const App = () => {
   );
 };
 
-const TextVal = ({ label, val, unit, large, mini }) => (<div style={{ color: '#00d4ff' }}>    {label && <div className="mini-label" style={{ fontSize: mini ? '0.5vw' : '0.6vw', color: '#888', fontWeight: 'bold' }}>{label}</div>}    <div className={large ? "big-value" : ""} style={{ fontSize: large ? '1.8vw' : mini ? '1vw' : '1.3vw', fontWeight: '900', lineHeight: '1.1' }}>    {val?.toFixed(1) || '0.0'}      <span style={{ fontSize: '0.7vw', color: '#00d4ff', marginLeft: '2px' }}>{unit}</span>    </div>  </div>);
-const containerStyle = { minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#052d38', position: 'relative', overflowX: 'hidden' };
+const TextVal = ({ label, val, unit, large, mini }) => (<div style={{ color: '#00d4ff' }}>    {label && <div className="mini-label" style={{ fontSize: mini ? '0.5vw' : '0.6vw', color: '#888', fontWeight: 'bold' }}>{label}</div>}    <div className={large ? "big-value" : ""} style={{ fontSize: large ? '1.5vw' : mini ? '1vw' : '1.5vw', fontWeight: '900', lineHeight: '1.1' }}>    {val?.toFixed(1) || '0.0'}      <span style={{ fontSize: '0.7vw', color: '#00d4ff', marginLeft: '2px' }}>{unit}</span>    </div>  </div>);
+const containerStyle = { minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#202020', position: 'relative', overflowX: 'hidden' };
 const headerStyle = {
   display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1vw 2vw', borderBottom: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(0, 0, 0, 0)', backdropFilter: 'blur(0px)',
   letterSpacing: '0.5px', fontFamily: "'Inter',sans-serif"
 };
-const mainAreaStyle = { display: 'flex', flexDirection: '', justifyContent: 'space-between', padding: '1.5vw', flexGrow: 1 };
-const rightStackStyle = { display: 'flex', flexDirection: 'column', gap: '1.5vh', alignItems: 'flex-end' };
-const windowStyle = { backgroundColor: 'rgba(0, 0, 0, 0.3)', backdropFilter: 'blur(2px)', borderRadius: '22px', border: '2px solid #85858511', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.13)', width: '18vw', minWidth: '250px', height: 'fit-content', flexShrink: 0, };
+const mainAreaStyle = { display: 'flex', flexDirection: 'row', justifyContent: 'center', padding: '1.5vw', flexGrow: 1, flexWrap: 'wrap' };
+const rightStackStyle = { display: 'flex', flexDirection: 'column', gap: '1.5vh', alignItems: 'center' };
+const windowStyle = { backgroundColor: 'rgba(105, 105, 105, 0.2)', backdropFilter: 'blur(40px)', borderRadius: '10px', border: '2px solid #85858511', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.13)', width: '14vw', minWidth: '200px', height: 'fit-content', flexShrink: 0, };
 const dragBarStyle = {
-  backgroundColor: '#18181804', padding: '0.6vw 1vw', borderRadius: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'grab',
-  letterSpacing: '0.5px', fontFamily: "'Inter',sans-serif"
+  backgroundColor: 'rgb(0, 0, 0)', padding: '0.6vw 1vw', borderRadius: '8px 8px 0 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'grab',
+  letterSpacing: '0.5px', fontFamily: "'Inter',sans-serif", height: '5px'
 };
-const titleStyle = { fontSize: '1.3vw', fontWeight: 'bold', color: '#eee' };
-const contentStyle = { padding: '1vw' };
+const titleStyle = { fontSize: '0.9vw', fontWeight: 'bold', color: '#eee' };
+const contentStyle = { padding: '0.5vw' };
 const categoryLabel = {
-  fontSize: '0.8vw', color: '#ffffffff', fontWeight: 'bold', borderBottom: '1px solid rgba(0,212,255,0.3)', marginBottom: '0.5vw', letterSpacing: '0.5px', fontFamily: "'Inter',sans-serif"
+  fontSize: '1.2vw', color: '#ffffffff', fontWeight: 'bold', borderBottom: '1px solid rgba(0,212,255,0.3)', marginBottom: '0.5vw', letterSpacing: '0.5px', fontFamily: "'Inter',sans-serif"
 };
 const textGrid = { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.8vw' };
-const alarmBoxSlim = { backgroundColor: 'rgba(255, 0, 0, 0.15)', borderLeft: '3px solid #ff4444', padding: '0.4vw 0.8vw', marginBottom: '0.4vw', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8vw', color: '#ff4444' };
+const alarmBoxSlim = { backgroundColor: 'rgba(255, 247, 247, 0.98)', borderLeft: '3px solid #ff4444', padding: '0.4vw 0.8vw', marginBottom: '0.4vw', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8vw', color: '#ff4444' };
 const sliderStyle = { appearance: 'none', width: '100%', height: '8px', background: '#000000ff', borderRadius: '4px', outline: 'none', boxShadow: 'inset 0 0 5px #000', marginTop: '10px', marginBottom: '10px', cursor: 'pointer' };
 const clearBtn = { backgroundColor: '#440000', border: '1px solid #f00', color: '#fff', cursor: 'pointer', fontSize: '0.55vw', padding: '0.2vw 0.5vw' };
 const selectStyle = { backgroundColor: '#000', color: '#00d4ff', fontSize: '0.8vw', border: '1px solid #444', borderRadius: '4px', padding: '2px 5px' };
@@ -668,7 +669,7 @@ const footerContent = {
 };
 
 const blinkerCSS = `
-
+{
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
   {font-family:'Inter', sans-serif;}
  .big-value, .mini-label { letterSpacing:'0.5px',fontFamily:"'Inter',sans-serif"; }
@@ -678,18 +679,42 @@ const blinkerCSS = `
    @keyframes blinker { 0% { background-color: transparent; } 50% { background-color: #ff4444; } 100% { background-color: transparent; } }
   html, body { background-color: #052d38; margin: 0; padding: 0; }
   input[type=range] { -webkit-appearance: none; background: transparent; }
-  input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; background: #333; }
-  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #00d4ff; margin-top: -6px; }
-
-  @media (max-width: 600px) {
-    .responsive-main { flex-direction: column !important; align-items: center !important; }
-    .responsive-window { width: 92vw !important; position: static !important; transform: none !important; margin-bottom: 20px; }
-    .responsive-stack { width: 100% !important; align-items: center !important; }
-    header, footer { padding: 15px !important; }
-    .footer-content-mobile { flex-direction: column !important; gap: 10px; text-align: center; }
-    span, div, button { font-size: 10px !important; }
-    .big-value { font-size: 22px !important; }
+  
+  input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; background: #333; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #00c431; margin-top: -6px; }
+  
+  @media (max-width: 800px) {
+    .responsive-main { 
+      flex-direction: row !important; 
+      flex-wrap: wrap !important; 
+      justify-content: center !important; 
+      gap: 10px !important; /* Jarak antar kotak */
+      padding: 10px !important;
+    }
+    .responsive-stack { 
+      width: 100% !important; 
+      flex-direction: row !important; 
+      flex-wrap: wrap !important; 
+      justify-content: center !important;
+      gap: 10px !important;
+    }
+    div[class*="react-draggable"] {
+      position: relative !important;
+      left: 0 !important;
+      top: 0 !important;
+      transform: none !important;
+      width: 45vw !important; /* Membuat 2 kolom (setengah layar) */
+      min-width: 160px !important; /* Mencegah terlalu kecil di HP ramping */
+      margin: 0 !important;
+    }
+    /* Kecilkan font agar muat di 2 kolom */
+    .big-value { font-size: 12px !important; }
+    span, div, button { font-size: 9px !important; }
   }
+
+
+
+  
 `;
 
 
