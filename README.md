@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+Digital Twin Dashboard
+A high-performance, real-time industrial monitoring dashboard for marine engine telematics. This application provides a "Digital Twin" interface to monitor, analyze, and control engine parameters remotely.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Key Features
+Real-time Data Stream: Leverages Supabase Postgres Changes for instant data updates without refreshing.
+Remote MQTT Control: Integrated MQTT client to send control commands (RPM and Load) back to the engine.
 
-## Available Scripts
+Interactive UI:
+Draggable Windows: Customize your workspace by moving gauges and charts.
+Dynamic Gauges: Visual indicators for RPM, Load, and Exhaust Temperatures.
+Trend Analysis: Full-screen historical data visualization with configurable time ranges (-5m to -30d).
+Smart Alarm System: Automated detection for Engine Overspeed, Low Oil Pressure, and High Exhaust Temperatures with acknowledgement (ACK) functionality.
 
-In the project directory, you can run:
+🛠 Tech Stack
+Frontend: React.js
+Real-time Database: Supabase (PostgreSQL)
+Messaging: MQTT (EMQX Broker)
+Visuals: Recharts (Trends) & React-Gauge-Component (Instrumentation)
+Interactivity: React-Draggable
 
-### `npm start`
+📖 How to Use
+1. Monitoring
+Gauges: Observe the circular gauges for live RPM and Load. If a value exceeds safety limits, the window will flash red.
+Exhaust Detail: Click the Exhaust Temp gauge to expand and view individual cylinder temperatures (C1-C6).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Controlling
+Use the Remote Control window on the left.
+Adjust the sliders for RPM or Load.
+Click "Set" to transmit the command via MQTT.
+Emergency Idle: Click the red button to instantly reset the engine to 400 RPM and 0% Load.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. Data Analysis
+The Trend window at the bottom left shows live graphing.
+Click the graph to enter Trend Analysis mode.
+Select specific parameters (e.g., Fuel Rate) and time ranges to analyze historical performance.
